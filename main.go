@@ -2,15 +2,13 @@ package main
 
 import (
 	"fmt"
+	routes "shary/Routes"
 )
 func main()  {
-	connection:= Connecttodb()
+	fmt.Println("System started")
 
+	mux:= routes.Setroutes()
 
-    fmt.Println(connection)
-
-   fmt.Println(Disconnectdb(connection))
-
- defer Startserver()
+	Startserver(mux)
 
 }
